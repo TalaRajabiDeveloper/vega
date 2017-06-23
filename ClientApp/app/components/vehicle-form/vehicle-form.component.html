@@ -1,0 +1,52 @@
+<form>
+  <div class="form-group">
+    <label for="makes">Makes</label>
+    <select class="form-control" id="makes" (change)="populateModel(i.value)" #i>
+      <option></option>
+      <option *ngFor="let item of makes" value="{{item.id}}">{{item.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="models">Models</label>
+    <select class="form-control" id="models">
+      <option *ngFor="let item of selectedModels" value="{{item.id}}">{{item.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="optionYes"> Is this vehicle registered?</label>
+    <div class="radio">
+      <label>
+        <input type="radio" name="isRegistered"  id="optionYes" value="true" checked>
+        Yes
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" name="isRegistered" id="optionNo" value="false">
+        No
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="Features"> Features</label>
+    <div class="checkbox">
+      <label *ngFor="let item of features">
+        <input type="checkbox" value="{{item.id}}" id="Features">
+        {{item.name}}
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="contactName">Contact Name</label>
+    <input type="text" class="form-control" id="contactName" placeholder="Contact Name">
+  </div>
+  <div class="form-group">
+    <label for="contactPhone">Contact Phone</label>
+    <input type="text" class="form-control" id="contactPhone" placeholder="Contact Phone">
+  </div>
+  <div class="form-group">
+    <label for="contactEmail">Contact Email</label>
+    <input type="email" class="form-control" id="contactEmail" placeholder="Contact Email">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
